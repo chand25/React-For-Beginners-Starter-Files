@@ -5,7 +5,7 @@ import { BrowserRouter, Match, Miss } from 'react-router';
 
 import './css/style.css';
 import App from './components/App';
-
+import NotFound from './components/NotFound';
 import StorePicker from './components/StorePicker';
 
 const Root  = () => {
@@ -15,6 +15,7 @@ const Root  = () => {
   {/* you have to wrap a div around Match since it can not be a direct child of BrowserRouter*/}
             <Match exactly pattern="/" component={StorePicker} />
             <Match pattern="/store/:storeId" component={App} />
+            <Miss component={NotFound}/>
         </div>
     </BrowserRouter>
     )
