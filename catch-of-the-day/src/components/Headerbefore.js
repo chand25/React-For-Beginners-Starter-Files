@@ -1,9 +1,11 @@
 import React from 'react';
 
 
-
-const Header = (props) => {
-   return (
+class Header extends React.Component {
+  render(){
+    console.log(this);
+    // $r to check react components and $0 to check javascript
+    return (
         <header className="top">
           <h1>
                 Catch
@@ -13,22 +15,11 @@ const Header = (props) => {
                 </span>
                  Day
           </h1>
-          <h3 className="tagline"><span>{props.tagline}</span></h3>
+          <h3 className="tagline"><span>{this.props.tagline}</span></h3>
         </header>
       )
+  }
 }
-
-/* best practice above with "const header () => {} " but it can be written as
-
-function header() {
-}
-
-or
-
-var Header = function
-*/
-
-
 
 
 export default Header;
