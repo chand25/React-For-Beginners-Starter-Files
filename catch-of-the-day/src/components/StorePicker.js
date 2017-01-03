@@ -12,8 +12,10 @@ class StorePicker extends React.Component{
     event.preventDefault();
     console.log('You changed the URL');
     //first grab text from box
-    console.log(this.storeInput.value);
+    const storeId = this.storeInput.value;
+    console.log(`Going to ${storeId}`);
     //second - transition from /to/ store/:storeId
+    this.context.router.transitionTo(`/store/${storeId}`);
   }
   render() {
     // before return you can put double slashes
@@ -31,6 +33,12 @@ class StorePicker extends React.Component{
        </form>
     )
   }
+}
+
+
+//surface the router from the parent with contextTypes
+StorePicker.contextTypes = {
+  router: React.PropTypes.object
 }
 
 export default StorePicker;
